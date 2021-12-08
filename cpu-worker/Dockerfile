@@ -2,11 +2,11 @@
 WORKDIR /app
 
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
-WORKDIR /src
-COPY ["cpu-worker/cpu-worker.csproj", "cpu-worker/"]
+WORKDIR "/cpu-worker"
+COPY ["cpu-worker.csproj", "cpu-worker/"]
 RUN dotnet restore "cpu-worker/cpu-worker.csproj"
 COPY . .
-WORKDIR "/src/cpu-worker"
+WORKDIR "/cpu-worker"
 RUN dotnet build "cpu-worker.csproj" -c Release -o /app/build
 
 FROM build AS publish
