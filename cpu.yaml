@@ -17,3 +17,10 @@ spec:
       containers:
         - name: cpu
           image: registry.zz11.net/super-cpu-intense:0.1
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "0.1"
+            limits:
+              memory: "128Mi"
+              cpu: "0.5"
