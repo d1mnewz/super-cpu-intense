@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: cpu
-          image: registry.zz11.net/super-cpu-intense:0.1
+          image: registry.zz11.net/super-cpu-intense:0.4
           resources:
             requests:
               memory: "64Mi"
