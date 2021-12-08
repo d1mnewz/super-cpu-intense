@@ -1,0 +1,19 @@
+﻿apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpu-deployment
+  labels:
+    app: cpu
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpu
+  template:
+    metadata:
+      labels:
+        app: cpu
+    spec:
+      containers:
+        - name: cpu
+          image: registry.zz11.net/super-cpu-intense:0.1
